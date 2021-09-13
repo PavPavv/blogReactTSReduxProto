@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 
+import Loader from '../../ui/Loader';
 import SignUpForm from './SignUpForm';
 import SignUpSuccess from './SignUpSuccess';
 import * as registerActions from '../../../store/register/actions';
@@ -25,6 +26,7 @@ interface FormValues {
 const SignUp = ({ toggleLogin }: SignUpProps): JSX.Element => {
   const isRegistered = useSelector((state: StoreState) => state.register.registerSuccess);
   const error = useSelector((state: StoreState) => state.register.error);
+  const loading = useSelector((state: StoreState) => state.register.loading);
   const loginRef = useRef<HTMLInputElement>(null);
   const dispatch = useDispatch();
 
@@ -65,7 +67,7 @@ const SignUp = ({ toggleLogin }: SignUpProps): JSX.Element => {
         ? <SignUpSuccess toggleLoginHandler={toggleLoginHandler} />
         : <SignUpForm formik={formik} toggleLoginHandler={toggleLoginHandler} error={error} />
       }
-      
+      {loading && <Loader />}
     </>
   );
 };
