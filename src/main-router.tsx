@@ -27,7 +27,7 @@ const MainRouter = ():JSX.Element => {
           <Route path="/" exact component={BlogPage} />
           <Route path="/todos" exact component={TodosPage} />
           <Route path="/form" exact component={FormPage} />
-          <Route component={NotFoundPage} />
+          <Route component={NotFoundPage} path="*" />
         </Switch>
       </Layout>
     );

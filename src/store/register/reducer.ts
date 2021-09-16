@@ -36,7 +36,7 @@ const registerSuccess = (state: RegisterState, action: SimpleAction): RegisterSt
 
 const registerFail = (state: RegisterState, action: actionInterfaces.RegisterActionError): RegisterState => {
   return mergeTwoObjects(state, {
-    loading: true,
+    loading: false,
     registerSuccess: false,
     error: action.payload,
   });

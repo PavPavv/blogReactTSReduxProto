@@ -4,10 +4,22 @@ import logo from '../../assets/logo.png';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    display: 'block',
+    
   },
   img: {
     maxWidth: '100%',
+    animation: `$logoAnimation infinite 3s ease-in-out`,
+  },
+  '@keyframes logoAnimation': {
+    '0%': {
+      transform: 'translateY(0)',
+    },
+    '50%': {
+      transform: 'translateY(10px)',
+    },
+    '100%': {
+      transform: 'translateY(0px)',
+    },
   },
 }));
 
