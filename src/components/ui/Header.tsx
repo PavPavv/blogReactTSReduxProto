@@ -2,15 +2,21 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import { Typography } from "@material-ui/core";
 
+//  logic
+import * as authActions from '../../store/auth/actions';
+import { SERVER_PREFIX } from '../../fakeServer/fakeServer';
+
+//  ui
 import Box from "./Box";
 import Logo from "./Logo";
 import Logout from "./Logout";
 import NavMenu from "./NavMenu";
-import * as authActions from '../../store/auth/actions';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
+    zIndex: 1000,
     position: 'fixed',
     top: 0,
     left: 0,
@@ -27,6 +33,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: 'flex',
     alignItems: 'center', 
   },
+  name: {
+    color: theme.palette.primary.light,
+  },
 }));
 
 
@@ -34,6 +43,11 @@ const Header = (): JSX.Element => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const history = useHistory();
+  let name = localStorage.getItem(`${SERVER_PREFIX}_name`);
+
+  if (!name) {
+    name = 'Unknown';
+  }
 
   const logoutHandler = (): void => {
     dispatch(authActions.logout());
@@ -53,6 +67,9 @@ const Header = (): JSX.Element => {
         </Box>
       </div>
       <div className={classes.headerSide}>
+        <Box mr="20">
+          <Typography variant="body1" className={classes.name}>{name}</Typography>
+        </Box>
         <Logout width={25} clicked={logoutHandler} />
       </div>
     </header>

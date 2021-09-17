@@ -48,10 +48,7 @@ export const registerThunk = (userData: User) => {
       const response = await fakeRegisterServer(userData);
       const result = response.status;
 
-      console.log(response)
-
       if (result === '200') {
-        console.log('result', result)
         dispatch(registerSuccess());
       } else if (result === '400') {
         dispatch(registerFail(response));

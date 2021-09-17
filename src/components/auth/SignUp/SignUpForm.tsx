@@ -2,11 +2,14 @@ import { useState, useEffect } from 'react';
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import { Grid, Typography } from '@material-ui/core';
 
+//  logic
+import { fields } from "./signUpFields";
+
+//  ui
 import Input from "../../ui/Input";
 import InputError from '../../ui/InputError';
 import Box from "../../ui/Box";
 import MainButton from "../../ui/MainButton";
-import { fields } from "./signUpFields";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -57,14 +60,12 @@ const SignUpForm = ({ formik, toggleLoginHandler, error }: SignUpFormProps): JSX
       }
     }
 
-    console.log('inputError', inputError)
   }, [errorCode, inputError]);
 
 
   return (
     <form className={classes.root} onSubmit={formik.handleSubmit}>
       {fields.map((field: Field) => {
-        console.log(field.name === inputError)
         return (
           <Box mb="30" key={field.id}>
             <>
@@ -82,7 +83,7 @@ const SignUpForm = ({ formik, toggleLoginHandler, error }: SignUpFormProps): JSX
               {formik.touched[`${field.name}`] && formik.errors[`${field.name}`] ? (
               <InputError>{formik.errors[`${field.name}`]}</InputError>
             ) : null}
-            {inputError == field.name ? <InputError>{`${field.label} already exists`}</InputError> : null}
+            {inputError === field.name ? <InputError>{`${field.label} already exists`}</InputError> : null}
             </>
           </Box>
         );

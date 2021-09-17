@@ -4,6 +4,7 @@ import { SimpleAction } from '../storeTypes';
 import { AUTH_TYPES } from "./types";
 import { fakeTokenServer } from "../../fakeServer/fakeServer";
 import { SERVER_PREFIX } from '../../fakeServer/fakeServer';
+import { deleteCookie } from '../../utils/funcs/cookie';
 
 // interfaces
 export interface Auth {
@@ -24,6 +25,12 @@ export const authSuccess = (): SimpleAction => {
   };
 };
 
+export const authInitialized = (): SimpleAction => {
+  return {
+    type: AUTH_TYPES.AUTH_INITIAL,
+  };
+};
+
 export const authFail = (): SimpleAction => {
   return {
     type: AUTH_TYPES.AUTH_FAIL,
@@ -31,6 +38,8 @@ export const authFail = (): SimpleAction => {
 };
 
 export const logout = (): SimpleAction => {
+  const cookieName = `${SERVER_PREFIX}_cookie`;
+  deleteCookie(cookieName);
   localStorage.removeItem(`${SERVER_PREFIX}_token`);
   return {
     type: AUTH_TYPES.AUTH_LOGOUT,

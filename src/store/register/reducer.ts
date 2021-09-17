@@ -1,6 +1,6 @@
 import { SimpleAction } from "../storeTypes";
 import { REGISTER_TYPES } from "./types";
-import * as actionInterfaces from './actions';
+import * as actions from './actions';
 import { mergeTwoObjects } from "../../utils/funcs/mergeTwoObjects";
 import { RegisterError } from '../../components/auth/SignUp/SignUpForm';
 
@@ -10,7 +10,7 @@ export interface RegisterState {
   error: null | RegisterError;
 };
 
-type RegisterActions = SimpleAction & actionInterfaces.RegisterActionError;
+type RegisterActions = SimpleAction & actions.RegisterActionError;
 
 const initialState = {
   loading: false,
@@ -34,7 +34,7 @@ const registerSuccess = (state: RegisterState, action: SimpleAction): RegisterSt
   });
 };
 
-const registerFail = (state: RegisterState, action: actionInterfaces.RegisterActionError): RegisterState => {
+const registerFail = (state: RegisterState, action: actions.RegisterActionError): RegisterState => {
   return mergeTwoObjects(state, {
     loading: false,
     registerSuccess: false,
