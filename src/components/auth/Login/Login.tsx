@@ -5,15 +5,19 @@ import { makeStyles, Theme } from "@material-ui/core/styles";
 import { Grid, Typography } from '@material-ui/core';
 import { useFormik } from 'formik';
 
+//  logic
+import { validationRules } from './validation-rules';
+import * as authActions from '../../../store/auth/actions';
+import { StoreState } from '../../../store/rootReducer';
+import { SERVER_PREFIX } from '../../../fakeServer/fakeServer';
+
+//  ui
 import Loader from '../../ui/Loader';
 import Input from "../../ui/Input";
 import InputError from '../../ui/InputError';
 import Box from "../../ui/Box";
 import MainButton from "../../ui/MainButton";
-import { validationRules } from './validation-rules';
-import * as authActions from '../../../store/auth/actions';
-import { StoreState } from '../../../store/rootReducer';
-import { SERVER_PREFIX } from '../../../fakeServer/fakeServer';
+
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -65,7 +69,6 @@ const Login = ({ toggleLogin }: LoginProps): JSX.Element => {
     },
     validationSchema: validationRules,
     onSubmit: (values: FormValues) => {
-      console.log(values);
       const { login, password } = values;
       dispatch(authActions.authThunk(login, password));
     },

@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 type MainButtonProps = {
   type: 'submit' | 'button';
   children: React.ReactNode;
-  isDisabled: boolean;
+  isDisabled?: boolean;
   clicked: () => void;
 };
 

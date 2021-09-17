@@ -2,13 +2,16 @@ import { useEffect, useRef } from 'react';
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Loader from '../../ui/Loader';
-import SignUpForm from './SignUpForm';
-import SignUpSuccess from './SignUpSuccess';
+//  logic
 import * as registerActions from '../../../store/register/actions';
 import { User } from '../../../store/register/actions';
 import { validationRules } from './validation-rules';
 import { StoreState } from '../../../store/rootReducer';
+
+//  ui
+import Loader from '../../ui/Loader';
+import SignUpForm from './SignUpForm';
+import SignUpSuccess from './SignUpSuccess';
 
 
 type SignUpProps = {

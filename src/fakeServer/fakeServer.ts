@@ -108,7 +108,7 @@ export const fakeTokenServer = (authData: FetchData): Promise<AuthResponseSucces
       setTimeout(() => {
         resolve({
           token: generateRandomKey(),
-          expires_in: '3600000',
+          expires_in: '360000',
         });
       }, 800)
     } else {

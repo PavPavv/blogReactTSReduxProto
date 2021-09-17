@@ -1,6 +1,15 @@
+
+//  ui
+import PageTitle from '../components/ui/PageTitle';
+import Box from '../components/ui/Box';
+
 const FormPage = () => {
   return (
-    <div>Form page</div>
+    <div>
+      <Box mt="50" mb="30">
+        <PageTitle title="Form" />
+      </Box>  
+    </div>
   );
 };
 

@@ -3,6 +3,7 @@ import { createTheme } from "@material-ui/core";
 enum Colors {
   white = '#ffffff',
   darkWhite = '#f2f2f2',
+  semiWhite = '#fafafa',
 
   lightBlack = '#282C34',
   black = '#24292E',
@@ -10,6 +11,7 @@ enum Colors {
   lightGray = '#F0F2F5',
   gray = '#989898',
 
+  lightBlue = '#007AC7',
   blue = '#1B66D6',
   darkBlue = '#1654B0',
 
@@ -29,41 +31,55 @@ export const theme = createTheme({
     },
     secondary: {
       light: Colors.lightBlack,
-      main: Colors.yellow,
+      main: Colors.black,
       dark: Colors.gray,
       contrastText: Colors.white,
     },
     info: {
       main: Colors.lightGray,
+      light: Colors.yellow,
     },
     error: {
       main: Colors.red,
     },
+    common: {
+      white: Colors.semiWhite,
+    },
+    divider: Colors.lightBlue,
   },
 
   typography: {
     h1: {
+      fontFamily: 'Titillium Web',
       fontSize: 48,
       fontWeight: 'bold',
     },
     h2: {
+      fontFamily: 'Titillium Web',
       fontSize: 36,
       fontWeight: 'bold',
     },
     h3: {
-      fontSize: 20,
+      fontFamily: 'Titillium Web',
+      fontSize: 28,
       fontWeight: 'bold',
     },
     subtitle1: {
+      fontFamily: 'Titillium Web',
       fontSize: 22,
     },
     subtitle2: {
+      fontFamily: 'Titillium Web',
       fontSize: 18,
     },
     body1: {
+      fontFamily: 'Titillium Web',
       fontSize: 16,
+      fontWeight: 600,
+      letterSpacing: 1,
     },
     body2: {
+      fontFamily: 'Titillium Web',
       fontSize: 14,
     }
 

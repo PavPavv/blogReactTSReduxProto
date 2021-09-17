@@ -1,6 +1,7 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import { Grid, Typography } from '@material-ui/core';
 
+//  ui
 import Box from "../../ui/Box";
 
 const useStyles = makeStyles((theme: Theme) => ({

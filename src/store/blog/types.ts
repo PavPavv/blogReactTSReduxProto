@@ -1,0 +1,5 @@
+export enum BLOG_TYPES {
+  BLOG_START = 'BLOG_START',
+  BLOG_SUCCESS = 'BLOG_SUCCESS',
+  BLOG_FAIL = 'BLOG_FAIL',
+};
