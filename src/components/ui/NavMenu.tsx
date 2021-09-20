@@ -24,6 +24,11 @@ const links = [
     id: 3,
     title: 'Todos',
     link: '/todos',
+  },
+  {
+    id: 4,
+    title: 'Chart',
+    link: '/chart',
   }
 ];
 

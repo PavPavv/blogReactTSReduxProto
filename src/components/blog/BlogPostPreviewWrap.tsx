@@ -1,5 +1,7 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
-import { Typography } from "@material-ui/core";
+
+//  ui
+import BlogPostPreview from "./BlogPostPreview";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -13,7 +15,7 @@ const BlogPostPreviewWrap = (): JSX.Element => {
 
   return (
     <div className={classes.root}>
-      <Typography variant="subtitle1">BlogPostPreviewWrap</Typography>
+      <BlogPostPreview />
     </div>
   );
 };

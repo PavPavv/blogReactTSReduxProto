@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 
 //  logic
 import { Article } from "../../store/blog/actions";
+import { StoreState } from "../../store/rootReducer";
 
 //  ui
 import BlogArticle from './BlogArticle';
@@ -26,10 +28,10 @@ type SearchListProps = {
 
 const SearchList = ({ filtered, addMore }: SearchListProps): JSX.Element => {
   const classes = useStyles();
-  const [currentId, setCurrentId] = useState(0);
+  const currentArticleId = useSelector((state: StoreState) => state.blog.articleId);
 
   const filteredItems = filtered.map((item) => {
-    const active = currentId === item.id;
+    const active = currentArticleId === item.id;
 
     return (
       <BlogArticle 
@@ -39,7 +41,6 @@ const SearchList = ({ filtered, addMore }: SearchListProps): JSX.Element => {
         title={item.title}
         text={item.body}
         activeStatus={active}
-        setCurrentId={setCurrentId}
       />
     );
   });

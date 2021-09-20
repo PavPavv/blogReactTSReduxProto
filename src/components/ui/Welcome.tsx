@@ -16,6 +16,29 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   title: {
     color: theme.palette.info.light,
+    animationName: '$welcomeAnimation',
+    animationIterationCount: 1,
+    animationTimingFunction: 'linear',
+    animationDuration: '2s',
+    animationDelay: '.1s',
+    animationFillMode: 'both',
+  },
+  '@keyframes welcomeAnimation': {
+    '0%': {
+      fontSize: '12px',
+    },
+    '25%': {
+      fontSize: '16px',
+    },
+    '50%': {
+      fontSize: '20px',
+    },
+    '75%': {
+      fontSize: '24px',
+    },
+    '100%': {
+      fontSize: '28px',
+    },
   },
 }));
 
@@ -25,7 +48,7 @@ const Welcome = (): JSX.Element => {
 
   return (
     <div className={classes.root}>
-      <Typography variant="h3" className={classes.title}>Good {getDayTimeStr()}, {currentName}!</Typography>
+      <Typography  className={classes.title}>Good {getDayTimeStr()}, {currentName}!</Typography>
     </div>
   );
 };
