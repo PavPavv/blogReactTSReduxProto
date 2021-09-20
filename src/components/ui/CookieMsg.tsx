@@ -61,7 +61,6 @@ const CookieMsg = (): JSX.Element => {
   }, [currentCookie]);
 
   const clickHandle = (): void => {
-    console.log('test')
     setIsCookieShown(false);
     setCookie(cookieName, cookieValue);
   };

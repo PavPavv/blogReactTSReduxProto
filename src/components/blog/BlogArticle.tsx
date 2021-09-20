@@ -1,5 +1,10 @@
+import { useDispatch } from "react-redux";
 import { Typography } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
+
+//  logic
+import * as blogActions from '../../store/blog/actions';
+
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -70,14 +75,14 @@ type BlogArticleProps = {
   title: string;
   text: string;
   activeStatus: boolean;
-  setCurrentId: (n: number) => void;
 };
 
-const BlogArticle = ({ tag, id, title, text, activeStatus, setCurrentId }: BlogArticleProps): JSX.Element => {
+const BlogArticle = ({ tag, id, title, text, activeStatus }: BlogArticleProps): JSX.Element => {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   const clickHandler = (): void => {
-    setCurrentId(id);
+    dispatch(blogActions.setArticleId(id));
   };
 
   return (

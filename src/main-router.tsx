@@ -11,8 +11,10 @@ import * as authActions from './store/auth/actions';
 import AuthPage from './pages/AuthPage';
 import Layout from './components/ui/Layout';
 import BlogPage from './pages/BlogPage';
+import ArticlePage from './pages/ArticlePage';
 import FormPage from './pages/FormPage';
 import TodosPage from './pages/TodosPage';
+import ChartPage from './pages/ChartPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Welcome from './components/ui/Welcome';
 import CookieMsg from './components/ui/CookieMsg';
@@ -26,7 +28,6 @@ const MainRouter = ():JSX.Element => {
   useEffect(() => {
     if (initialized) {
       setStart(true);
-      console.log('start')
       setTimeout(() => {
         setStart(false);
         dispatch(authActions.authInitialized());
@@ -48,8 +49,10 @@ const MainRouter = ():JSX.Element => {
         <Layout>
           <Switch>
             <Route path="/" exact component={BlogPage} />
+            <Route path="/blog/:aticleId" exact component={ArticlePage} />
             <Route path="/todos" exact component={TodosPage} />
             <Route path="/form" exact component={FormPage} />
+            <Route path="/chart" exact component={ChartPage} />
             <Route component={NotFoundPage} path="*" />
           </Switch>
         </Layout>

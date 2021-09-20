@@ -13,6 +13,7 @@ import PageTitle from '../components/ui/PageTitle';
 import Box from '../components/ui/Box';
 import BlogSearch from "../components/blog/BlogSearch";
 import Loader from "../components/ui/Loader";
+import BlogPostPreviewWrap from "../components/blog/BlogPostPreviewWrap";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -61,10 +62,9 @@ const BlogPage = () => {
 
   useEffect(() => {
     dispatch(blogActions.blogThunk(limit, page));
-  }, [dispatch, limit]);
+  }, [dispatch, limit, page]);
 
   const addMoreArticles = ():void => {
-    console.log('test')
     setLimit(limit + 5);
   };
 
@@ -88,7 +88,7 @@ const BlogPage = () => {
           </aside>
 
           <div className={classes.right}>
-            <div>Right</div>
+            <BlogPostPreviewWrap />
           </div>
         </section>
       </div>

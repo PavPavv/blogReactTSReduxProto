@@ -67,6 +67,7 @@ export const theme = createTheme({
     subtitle1: {
       fontFamily: 'Titillium Web',
       fontSize: 22,
+      lineHeight: '24px',
     },
     subtitle2: {
       fontFamily: 'Titillium Web',
@@ -80,7 +81,7 @@ export const theme = createTheme({
     },
     body2: {
       fontFamily: 'Titillium Web',
-      fontSize: 14,
+      fontSize: 16,
     }
 
   }
