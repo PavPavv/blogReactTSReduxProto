@@ -31,7 +31,7 @@ const MainRouter = ():JSX.Element => {
       setTimeout(() => {
         setStart(false);
         dispatch(authActions.authInitialized());
-      }, 1600);
+      }, 3600);
     }
   }, [token]);
 

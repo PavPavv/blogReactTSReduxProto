@@ -5,13 +5,13 @@ import { makeStyles, Theme } from "@material-ui/core/styles";
 //  logic
 import * as blogActions from '../../store/blog/actions';
 
-
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     position: 'relative',
-    borderBottom: `1px solid ${theme.palette.secondary.dark}`,
+    borderRadius: 3,
+    border: `1px solid ${theme.palette.secondary.dark}`,
     margin: '10px 0',
-    padding: '10px 0',
+    padding: '10px 10px',
     cursor: 'pointer',
 
     '&:hover': {
@@ -22,10 +22,11 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   rootActive: {
     position: 'relative',
-    borderBottom: `1px solid ${theme.palette.secondary.dark}`,
+    borderRadius: 3,
+    border: `1px solid ${theme.palette.primary.dark}`,
     margin: '10px 0',
-    padding: '10px 0',
-    boxShadow: 'inset 0px -6px 5px -6px #222',
+    padding: '10px 10px',
+    boxShadow: 'rgba(22, 84, 176, 0.2) 0px 2px 8px 0px;',
     cursor: 'pointer',
   },
   tag: {

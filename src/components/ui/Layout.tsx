@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   root: {
     display: 'flex',
     flexGrow: 1,
-    maxWidth: '1450px',
+    maxWidth: '70%',
     minHeight: 'calc(100vh - 100px)',
     margin: '0 auto',
     padding: '70px 20px 20px 20px',

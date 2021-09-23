@@ -11,6 +11,8 @@ enum Colors {
   lightGray = '#F0F2F5',
   gray = '#989898',
 
+  green = '#8EF2B8',
+
   lightBlue = '#007AC7',
   blue = '#1B66D6',
   darkBlue = '#1654B0',
@@ -38,6 +40,7 @@ export const theme = createTheme({
     info: {
       main: Colors.lightGray,
       light: Colors.yellow,
+      dark: Colors.green,
     },
     error: {
       main: Colors.red,

@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   left: {
     width: '40%',
     minWidth: '500px',
-    minHeight: 'calc(100vh - 170px)',
+    minHeight: '80vh',
   },
   searchPanel: {
 
@@ -37,8 +37,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   right: {
     position: 'fixed',
     top: 210,
-    right: 0,
+    right: '15%',
     width: '50%',
+    maxWidth: 700,
     minHeight: 'calc(100vh - 170px)',
   },
 }));

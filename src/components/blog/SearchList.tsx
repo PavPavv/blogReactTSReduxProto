@@ -9,6 +9,7 @@ import { StoreState } from "../../store/rootReducer";
 
 //  ui
 import BlogArticle from './BlogArticle';
+import Box from '../ui/Box';
 
 const useStyles = makeStyles((theme: Theme) => ({
   addBtn: {
@@ -34,14 +35,15 @@ const SearchList = ({ filtered, addMore }: SearchListProps): JSX.Element => {
     const active = currentArticleId === item.id;
 
     return (
-      <BlogArticle 
-        key={item.id}
-        id={item.id}
-        tag={item.userId}
-        title={item.title}
-        text={item.body}
-        activeStatus={active}
-      />
+      <Box key={item.id} mb="20">
+        <BlogArticle 
+          id={item.id}
+          tag={item.userId}
+          title={item.title}
+          text={item.body}
+          activeStatus={active}
+        />
+      </Box>
     );
   });
 
