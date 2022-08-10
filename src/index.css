@@ -16,3 +16,15 @@ body {
 button, label, a, input, textarea {
   font-family: 'Titillium Web', sans-serif;
 }
+
+input[type="radio"] {
+  display: none;
+}
+
+.star-rating {
+  display: flex;
+}
+
+.star:hover {
+  cursor: pointer;
+}

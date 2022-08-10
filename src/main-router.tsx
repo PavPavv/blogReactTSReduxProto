@@ -15,6 +15,7 @@ import ArticlePage from './pages/ArticlePage';
 import FormPage from './pages/FormPage';
 import TodosPage from './pages/TodosPage';
 import ChartPage from './pages/ChartPage';
+import FeaturesPage from './pages/FeaturesPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Welcome from './components/ui/Welcome';
 import CookieMsg from './components/ui/CookieMsg';
@@ -33,7 +34,7 @@ const MainRouter = ():JSX.Element => {
         dispatch(authActions.authInitialized());
       }, 1600);
     }
-  }, [token]);
+  }, [dispatch, initialized, token]);
 
   let routes: JSX.Element = (
     <Switch>
@@ -53,6 +54,7 @@ const MainRouter = ():JSX.Element => {
             <Route path="/todos" exact component={TodosPage} />
             <Route path="/form" exact component={FormPage} />
             <Route path="/chart" exact component={ChartPage} />
+            <Route path="/features" exact component={FeaturesPage} />
             <Route component={NotFoundPage} path="*" />
           </Switch>
         </Layout>
